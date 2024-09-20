@@ -1,12 +1,12 @@
 version: '3'
 
 volumes:
-  pg_data_kittygram:
+  pg_data:
   static:
-  media_kittygram:
+  media:
 
 services:
-  db_kittygram:
+  db:
     image: postgres:13
     env_file: .env
     volumes:
@@ -17,9 +17,9 @@ services:
     env_file: .env
     volumes:
       - static:/app/backend_static/
-      - media_kittygram:/app/media
+      - media:/app/media
     depends_on:
-      - db_kittygram
+      - db
 
   frontend:
     image: vasiluk23/kittygram_frontend:latest
@@ -35,7 +35,7 @@ services:
       - 9000:80
     volumes:
       - static:/static
-      - media_kittygram:/media
+      - media:/media
     depends_on:
       - backend
       - frontend
