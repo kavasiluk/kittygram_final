@@ -62,12 +62,15 @@ http://localhost:9000/
 Для корректной работы проекта Kittygram необходимо заполнить файл `.env` следующим образом:
 
 dotenv
-POSTGRES_DB=kittygram
-POSTGRES_USER=kittygram_user
-POSTGRES_PASSWORD=kittygram_password
+POSTGRES_DB=django
+POSTGRES_USER=django_user
+POSTGRES_PASSWORD=mysecretpassword
 DB_NAME=kittygram
-DB_HOST=db_kittygram
+DB_HOST=db
 DB_PORT=5432
+Debug=False
+ALLOWED_HOSTS=your.ip,your.domain,localhost,127.0.0.1
+USE_SQLITE=False
 
  Перед запуском проекта убедитесь, что переменные окружения в файле .env заполнены корректно и соответствуют вашей конфигурации базы данных.
 
